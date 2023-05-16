@@ -1,0 +1,27 @@
+<div class="main-nav">
+    <div class ="options">
+        <div class="home" routerLink="/home" routerLinkActive="home-router">
+            <mat-icon class="option-icon">home</mat-icon>
+            <span>Home</span>
+        </div>
+        <div class="Appointments" routerLink="/app" routerLinkActive="Appointment-router">
+            <mat-icon class="option-icon">description</mat-icon>
+            <span>Appointments</span>
+        </div>
+    </div>
+    <div class = "userdata">
+        <div class="user-initials">
+            <span>{{ initials }}</span>
+        </div>
+        <div class="user">
+            <p class="login-name" (click)="openDropdown()">{{this.firstname}} {{this.lastname}}</p>
+            <mat-icon class="choose-dropdown" fontIcon="arrow_drop_down" (click)="openDropdown()"></mat-icon>
+            <div class="dropdown" *ngIf="dropdown">
+                <div class="dropdown-option" (click)="Signout()" routerLink="/">
+                    <mat-icon class="option-icon">power_settings_new</mat-icon>
+                    <span class="option-text">Sign out</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

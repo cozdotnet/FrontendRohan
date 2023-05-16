@@ -1,0 +1,45 @@
+<div class="change-password">
+    <div class="password-dialog">
+        <h2>SIGN UP</h2>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" formControlName="username" required>
+                <div class="validate"
+                    *ngIf="signupForm.controls?.['username']?.errors?.['required'] && (signupForm.controls?.['username']?.dirty || signupForm.controls?.['username']?.touched)">
+                    Username is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" type="{{ hideNewPassword ? 'password' : 'text' }}" id="newPassword"
+                    formControlName="newPassword" required>
+                <div class="password-toggle" (click)="togglePasswordVisibility('newPassword')">
+                    <i class="material-icons">{{ hideNewPassword ? 'visibility_off' : 'visibility' }}</i>
+                </div>
+                <div class="validate"
+                    *ngIf="signupForm.controls?.['newPassword']?.errors?.['required'] && (signupForm.controls?.['newPassword']?.dirty || signupForm.controls?.['newPassword']?.touched)">
+                    New password is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmNewPassword">Confirm New Password</label>
+                <input type="password" type="{{ hideConfirmNewPassword ? 'password' : 'text' }}" id="confirmNewPassword"
+                    formControlName="confirmNewPassword" required>
+                <div class="password-toggle" (click)="togglePasswordVisibility('confirmNewPassword')">
+                    <i class="material-icons">{{ hideConfirmNewPassword ? 'visibility_off' : 'visibility' }}</i>
+                </div>
+                <div class="validate"
+                    *ngIf="signupForm.errors?.['passwordMismatch'] && (signupForm.controls?.['confirmNewPassword']?.dirty || signupForm.controls?.['confirmNewPassword']?.touched)">
+                    Passwords must match
+                </div>
+            </div>
+            <button type="submit" [disabled]="signupForm.invalid">SIGN UP</button>
+            <div class="loginback">
+                <span>
+                    Already have an account ? <a routerLink="/">Login</a> here.
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="homePage">
+    <app-navbar></app-navbar>
+
+    <div class="input-group searchbar">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-primary">Search</button>
+    </div>
+
+    <div class="ActionTable">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col">Actions</th>
+                    <th scope="col">
+                        NAME
+                        <mat-icon class="unfold">unfold_more</mat-icon>
+                    </th>
+                    <th scope="col">
+                        Date
+                        <mat-icon class="unfold">unfold_more</mat-icon>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let app of appointment; let i =index"
+                [ngClass]="{'editing-row': editingRowIndex === i}">
+                <td class="d-flex align-items-center action-icons">
+                    <ng-container *ngIf="!editMode">
+                        <mat-icon (click)="editRow(i)" class="edit-icon">edit</mat-icon>
+                        <mat-icon (click)="deleteRow(i)" class="delete-icon">delete</mat-icon>
+                        <span class="mx-2">|</span>
+                    </ng-container>
+                    <ng-container *ngIf="editMode">
+                        <mat-icon (click)="saveRow(i)" class="done-icon">done</mat-icon>
+                        <mat-icon (click)="cancelRow(i)" class="close-icon">close</mat-icon>
+                    </ng-container>
+                </td>
+            </tbody>
+        </table>
+    </div>
+
+</div>

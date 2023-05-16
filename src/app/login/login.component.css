@@ -1,0 +1,118 @@
+.login-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("src/assets/login-bg.jpg");
+    background-size: cover;
+}
+
+.login-container {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.622);
+    width: 500px;
+    height: 45%;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-user,
+.login-pass {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 50px 0;
+}
+
+.logo-image {
+    width: 70%;
+    height: 40px;
+}
+
+.login-username,
+.login-password {
+    height: 43px;
+    width: 100%;
+    border-radius: 7px 7px;
+    background-color: white;
+    border-color: aliceblue;
+}
+
+#login-button {
+    margin: 20px;
+}
+
+.alert {
+    color: red;
+    padding: 0;
+}
+
+.signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-container .login-username,
+.input-container .login-password {
+    margin-bottom: 15px;
+}
+
+/*i icon */
+
+.login-password {
+    position: relative;
+}
+
+.login-password input[type="password"] {
+    padding-right: 40px;
+}
+
+.login-password .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+
+/*Responsive*/
+
+/* Small devices (phones) */
+@media only screen and (max-width: 600px) {
+
+    .login-username,
+    .login-password {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Medium devices (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .login-container {
+        max-width: 80%;
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 768px) {
+    .login-container {
+        max-width: 60%;
+    }
+}

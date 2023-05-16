@@ -1,0 +1,32 @@
+<div class="login-component">
+    <div class="login-container">
+        <div class="login-logo">
+            <h1>LOGIN</h1>
+        </div>
+        <form [formGroup]="profileForm">
+            <div class="input-container">
+                <input class="login-username" matInput id="username" type="text" formControlName="username"
+                    placeholder="Username" name="username">
+                <div class="login-password">
+                    <input class="login-password" matInput id="password" [type]="hidePassword ? 'password' : 'text'"
+                        formControlName="password" placeholder="Password" name="password">
+                    <i class="toggle-password material-icons" (click)="togglePasswordVisibility()">
+                        {{ hidePassword ? 'visibility_off' : 'visibility' }}</i>
+                </div>
+
+                <div class="login-singed">
+                    <input type="checkbox" class="login-signed-in">
+                    <span> Keep me signed in </span>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-15 mx-auto" id="login-button">
+                <button class="btn btn-primary" type="button" (click)="login()">Login</button>
+            </div>
+            <div class="signup">
+                <span>
+                    Don`t have an account ? <a routerLink="/signup">Sign Up</a> here.
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
